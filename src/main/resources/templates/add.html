@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="jia" method="post">
+        姓名:<input type="text" name="userName"><br>
+        性别:<input type="radio" name="gender" th:value="1" th:text="男" checked>
+        <input type="radio" name="gender" th:value="2" th:text="女"><br>
+        电话:<input type="text" name="phone"><br>
+        日期:<input type="text" name="birthday"><br>
+        职位:<select name="userRole">
+                <option th:each="r:${application.roles}" th:value="${r[id]}" th:text="${r[roleName]}"></option>
+            </select>
+        <br>
+        <input type="submit" value="保存">
+    </form>
+</body>
+</html>
