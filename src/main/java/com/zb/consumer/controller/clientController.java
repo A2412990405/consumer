@@ -32,6 +32,7 @@ public class clientController {
 
     @RequestMapping("/all")
     public String search(Model model,@RequestParam Map map){
+        System.out.println("来了一句代码");
         System.out.println("consumer:"+map);
         model.addAttribute("users", userService.getAll(map));
         return "list";
